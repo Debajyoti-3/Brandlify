@@ -48,11 +48,11 @@ export default {
         "19/20": "95%",
         22: "88px",
         100: "100px",
+        512: "512px",
         330: "330px",
         388: "388px",
         400: "400px",
         440: "440px",
-        512: "512px",
         640: "640px",
         960: "960px",
         1230: "1230px",
@@ -74,14 +74,42 @@ export default {
       },
       flex: {
         50: "0 0 50%",
-        100: "0 0 100%",
-        256: "0 0 256px",
-        280: "0 0 280px",
-        300: "0 0 300px",
         320: "1px 0 320px",
+        300: "0 0 300px",
         540: "0 0 540px",
+        280: "0 0 280px",
+        256: "0 0 256px",
+        100: "0 0 100%",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addBase, theme }) {
+      addBase({
+        'html': {
+          backgroundColor: theme('colors.s1'),
+        },
+        'body': {
+          fontFamily: theme('fontFamily.poppins'),
+          fontSize: '16px',
+          letterSpacing: '-0.03em',
+          color: theme('colors.p5'),
+        },
+        'a': {
+          textDecoration: 'none',
+        },
+        'img': {
+          display: 'block',
+          maxWidth: '100%',
+        },
+        'button': {
+          background: 'none',
+          letterSpacing: '-0.03em',
+        },
+        'input': {
+          letterSpacing: '-0.03em',
+        },
+      })
+    }
+  ],
 };
