@@ -8,7 +8,8 @@ function App() {
 
   return (
    <div>
-    Hello World
+
+    <h1 className='bg-s1'>Hello world</h1>
    </div>
   )
 }
